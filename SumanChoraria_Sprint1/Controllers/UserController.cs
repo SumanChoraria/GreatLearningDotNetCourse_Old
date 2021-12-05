@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SumanChoraria_Sprint1.Models;
+using SumanChoraria_Sprint1.Models.Repositories;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -15,55 +16,9 @@ namespace SumanChoraria_Sprint1.Controllers
     [ApiController]
     public class UserController : BaseController<UserModel>
     {
-        private readonly Context _context;
-
- 
-        public UserController(Context context) :base(context)
+        public UserController(IUserRepository userRepository) : base(userRepository)
         {
-            _context = context;
 
-            if (_context.Users.Count() == 0)
-            {
-                _context.Users.Add(new UserModel
-                {
-                    FirstName = "John",
-                    LastName = "Doe",
-                    Email = "john.doe@test.com",
-                    Password = "Password1"
-                });
-
-                _context.SaveChanges();
-
-                _context.Users.Add(new UserModel
-                {
-                    FirstName = "John",
-                    LastName = "Skeet",
-                    Email = "john.skeet@test.com",
-                    Password = "Password1"
-                });
-
-                _context.SaveChanges();
-
-                _context.Users.Add(new UserModel
-                {
-                    FirstName = "Mark",
-                    LastName = "Seeman",
-                    Email = "mark.seeman@test.com",
-                    Password = "Password1"
-                });
-
-                _context.SaveChanges();
-
-                _context.Users.Add(new UserModel
-                {
-                    FirstName = "Bob",
-                    LastName = "Martin",
-                    Email = "bob.martin@test.com",
-                    Password = "Password1"
-                });
-
-                _context.SaveChanges();
-            }
         }
     }
 }

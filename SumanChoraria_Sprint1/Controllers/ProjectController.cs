@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SumanChoraria_Sprint1.Models;
+using SumanChoraria_Sprint1.Models.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,49 +14,11 @@ namespace SumanChoraria_Sprint1.Controllers
     [ApiController]
     public class ProjectController : BaseController<ProjectModel>
     {
-        private readonly Context _context;
+       
      
-        public ProjectController(Context context) : base(context)
+        public ProjectController(IProjectRepository projectRepository) : base(projectRepository)
         {
-            _context = context;
-            if (_context.Projects.Count() == 0)
-            {
-                _context.Projects.Add(new ProjectModel
-                {
-                    Name = "TestProject1",
-                    Detail = "This is a test Project",
-                    CreatedOn = DateTime.Now
-                });
-
-                _context.SaveChanges();
-
-                _context.Projects.Add(new ProjectModel
-                {
-                    Name = "TestProject2",
-                    Detail = "This is a test Project",
-                    CreatedOn = DateTime.Now
-                });
-
-                _context.SaveChanges();
-
-                _context.Projects.Add(new ProjectModel
-                {
-                    Name = "TestProject3",
-                    Detail = "This is a test Project",
-                    CreatedOn = DateTime.Now
-                });
-
-                _context.SaveChanges();
-
-                _context.Projects.Add(new ProjectModel
-                {
-                    Name = "TestProject4",
-                    Detail = "This is a test Project",
-                    CreatedOn = DateTime.Now
-                });
-
-                _context.SaveChanges();
-            }
+           
         }
     }
 }

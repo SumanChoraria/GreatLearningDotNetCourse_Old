@@ -15,6 +15,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using SumanChoraria_Sprint1.Models;
+using SumanChoraria_Sprint1.Models.Repositories;
 
 namespace SumanChoraria_Sprint1
 {
@@ -31,7 +32,6 @@ namespace SumanChoraria_Sprint1
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-
             services.AddSwaggerGen(swagger =>
             {
                
@@ -89,6 +89,11 @@ namespace SumanChoraria_Sprint1
             services.AddDbContext<Context>(c => {
                 c.UseInMemoryDatabase("TempDB");
             });
+
+            services.AddScoped<IBaseRepository<BaseModel>, BaseRepository<BaseModel>>();
+            services.AddScoped<IProjectRepository, ProjectRepository>();
+            services.AddScoped<ITaskRepository, TaskRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
         }
 
 
