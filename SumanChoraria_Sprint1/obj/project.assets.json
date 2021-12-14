@@ -1034,6 +1034,19 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlDocument.dll": {}
         }
+      },
+      "SumanChoraria_Sprint2/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "5.0.12"
+        },
+        "compile": {
+          "bin/placeholder/SumanChoraria_Sprint2.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SumanChoraria_Sprint2.dll": {}
+        }
       }
     }
   },
@@ -4250,6 +4263,11 @@
         "system.xml.xmldocument.4.3.0.nupkg.sha512",
         "system.xml.xmldocument.nuspec"
       ]
+    },
+    "SumanChoraria_Sprint2/1.0.0": {
+      "type": "project",
+      "path": "../SumanChoraria_Sprint2/SumanChoraria_Sprint2.csproj",
+      "msbuildProject": "../SumanChoraria_Sprint2/SumanChoraria_Sprint2.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -4258,6 +4276,7 @@
       "Microsoft.EntityFrameworkCore >= 5.0.12",
       "Microsoft.EntityFrameworkCore.InMemory >= 5.0.12",
       "Microsoft.IdentityModel.Tokens >= 6.14.1",
+      "SumanChoraria_Sprint2 >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.2.3",
       "System.IdentityModel.Tokens.Jwt >= 6.14.1"
     ]
@@ -4295,7 +4314,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Sudheer\\source\\repos\\SumanChoraria_Sprint2\\SumanChoraria_Sprint2\\SumanChoraria_Sprint2.csproj": {
+              "projectPath": "C:\\Users\\Sudheer\\source\\repos\\SumanChoraria_Sprint2\\SumanChoraria_Sprint2\\SumanChoraria_Sprint2.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
